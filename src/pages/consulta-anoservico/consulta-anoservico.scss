@@ -1,0 +1,17 @@
+page-consulta-anoservico {
+    .div-em-colunas {
+        width:50%; 
+        padding: 10;
+        float: left;
+    }
+
+    .meu-card { 
+        background: rgb(201, 229, 247);
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 1px solid rgb(0, 140, 255);
+        font-weight: bold;
+        font-size: 2.0em;
+        top: 52%;
+    }
+}

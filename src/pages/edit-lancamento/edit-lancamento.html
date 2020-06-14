@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar color="edition">
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+ <ion-list>
+
+  <ion-item (click)="selecionaData()" > 
+    <ion-label stacked>Data</ion-label>
+    <ion-datetime disabled="true" [(ngModel)]="model.dataAtividade" name="dataAtividade" displayFormat="DD/MM/YYYY"></ion-datetime>
+</ion-item>
+
+    <ion-item>
+      <ion-label stacked>Publicações</ion-label>
+      <ion-input type="number" name="qtdPublicacao" [(ngModel)]="model.qtdPublicacao"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label stacked>Hora</ion-label>
+          <ion-input type="number" min="0" max="23" side="left" name="qtdHora" [(ngModel)]="model.qtdHora"></ion-input>
+            </ion-item>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label stacked>minutos</ion-label>
+          <ion-select [(ngModel)]="model.qtdMinuto">
+            <ion-option value="0">0</ion-option>
+            <ion-option value="15">15</ion-option>
+            <ion-option value="30">30</ion-option>
+            <ion-option value="45">45</ion-option>
+          </ion-select>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <ion-item>
+            <ion-label stacked>Vídeos</ion-label>
+            <ion-input type="number" name="qtdVideo" [(ngModel)]="model.qtdVideo"></ion-input>
+                </ion-item>
+        </ion-col>
+        <ion-col width-50>
+          <ion-item>
+            <ion-label stacked>Revisitas</ion-label>
+            <ion-input type="number" name="qtdRevisita" [(ngModel)]="model.qtdRevisita"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <ion-item> 
+            <ion-label stacked>Crédito de horas</ion-label>
+            <ion-input type="number" name="qtdCredito" [(ngModel)]="model.qtdCredito"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-label stacked>Observações</ion-label>
+      <ion-textarea name="obs" [(ngModel)]="model.obs"></ion-textarea>
+    </ion-item>    
+
+  </ion-list>
+
+  <ion-fab right bottom>
+      <button ion-fab (click)="save()"><ion-icon name="checkmark"></ion-icon>
+      </button>
+  </ion-fab>
+  
+</ion-content>

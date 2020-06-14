@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar color="rapport">
+    <ion-title>
+      Configurações
+    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let param of parametros">
+
+      <ion-card-header>
+        <h2>{{ param.publicador }}</h2> 
+        <h2>Meu email: {{ param.meuEmail }}</h2> 
+        <p>Email do destinatário: {{ param.emailSecretario }}</p>
+        <p>Meta de horas: {{ param.metaHoras }}</p>
+      </ion-card-header>
+
+      <ion-row text-center>
+        <ion-col>
+          <button ion-button icon-left clear small color="twitter" (click)="editParametro(param.id);">
+            <ion-icon name="create"></ion-icon>
+            <div>Editar</div>
+          </button>
+        </ion-col> 
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

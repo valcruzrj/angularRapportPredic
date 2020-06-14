@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ConsultaAnoservicoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-navbar color="rapport">
+
+    <ion-title>Consulta Ano de Serviço</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+ 
+<ion-content padding>
+  <ion-item (click)="selecionaDataInicial()" class="div-em-colunas" > 
+    <ion-label stacked>Data Inicial</ion-label>
+    <ion-datetime disabled="true" [(ngModel)]="dataInicial" name="dataInicial" displayFormat="DD/MM/YYYY"></ion-datetime>
+</ion-item>
+     
+<ion-item (click)="selecionaDataFinal()" class="div-em-colunas" >
+  <ion-label stacked>Data Final</ion-label>
+  <ion-datetime disabled="true" [(ngModel)]="dataFinal" name="dataFinal" displayFormat="DD/MM/YYYY"></ion-datetime>
+</ion-item>
+
+<ion-list>
+  <ion-card class="meu-card" *ngFor="let anoServico of dadosAnoServico"> 
+    <ion-card-header>
+        <h2> </h2> 
+        <h2> </h2> 
+        <h2>Horas trabalhadas: {{ anoServico.qtdHora }}  </h2> 
+        <h2>Crédito de horas: {{ anoServico.qtdCredito }}  </h2> 
+        <h2>Horas restantes: {{ anoServico.horasRestantes }} </h2> 
+        <h2>Média de horas: {{ anoServico.mediaHoras | number:"1.2-2" }} </h2> 
+        <h2>Publicações: {{ anoServico.qtdPublicacao }} </h2> 
+        <h2> </h2> 
+      </ion-card-header>
+<!-- implementar gráfico na próxima versão
+      <div> 
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [colors]="barChartColors"
+                  [chartType]="barChartType"></canvas>
+        </div>
+      </div>
+    }
+-->
+</ion-card>
+</ion-list>
+
+<ion-fab right bottom>
+    <button ion-fab (click)="consultaAnoServico()"><ion-icon name="search"></ion-icon>
+    </button>
+</ion-fab>
+
+</ion-content>

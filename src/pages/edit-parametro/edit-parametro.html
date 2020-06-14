@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="edition">
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+        <ion-item>
+          <ion-label floating>Nome</ion-label>
+          <ion-input type="text" name="publicador" [(ngModel)]="model.publicador"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Meu email</ion-label>
+          <ion-input type="email" name="meuEmail" [(ngModel)]="model.meuEmail"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Email do destinatário</ion-label>
+          <ion-input type="email" name="emailSecretario" [(ngModel)]="model.emailSecretario"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating> Horas mensais</ion-label>
+          <ion-input type="number" name="metaHoras" [(ngModel)]="model.metaHoras"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating> Estudos bíblicos diferentes no mês</ion-label>
+          <ion-input type="number" name="estudo" [(ngModel)]="model.estudo"></ion-input>
+        </ion-item>
+   
+        <ion-item>
+          <ion-label>Tempo Integral</ion-label>
+          <ion-checkbox name="pioneiro" [(ngModel)]="model.pioneiro"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Enviar cópia para mim</ion-label>
+          <ion-checkbox name="copiaEmail" [(ngModel)]="model.copiaEmail"></ion-checkbox>
+        </ion-item>
+
+    </ion-list>
+      
+
+    <ion-fab right bottom>
+        <button ion-fab (click)="save()"><ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-fab>
+  
+</ion-content>

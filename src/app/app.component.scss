@@ -1,0 +1,19 @@
+myapp {
+    #cabecalho-menu .item-inner {
+        border: none;
+    }
+    .cabecalho-menu {
+        background-image: url('../assets/imgs/material-design-background.jpg');
+        height: 150px;
+        margin-bottom: 10px;
+
+        h2 {
+            color: rgb(241, 183, 21);
+            font-weight: bold;
+        }
+
+        p {
+            color: rgb(238, 238, 238);
+        }
+    }
+}

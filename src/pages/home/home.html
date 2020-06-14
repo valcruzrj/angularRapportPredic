@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar color="rapport">
+      <ion-title>
+        Minhas atividades
+      </ion-title>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="mesAnterior()">
+            <ion-icon name="arrow-back"></ion-icon></button>
+        </ion-col>
+        <ion-col col-6>
+          <div> 
+          <button ion-button color="light">{{dataExibida}}</button>
+        </div>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="proximoMes()">
+            <ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      
+    <ion-list>
+      <ion-item-sliding *ngFor="let lancamento of lancamentos">
+  
+        <button ion-item (click)="editLancamento(lancamento.id)">
+          <h2>{{ lancamento.dataAtividade | date: 'dd/MM/yyyy'}}</h2>
+          <p> Horas: {{ lancamento.qtdHora }}:{{ lancamento.qtdMinuto }}   -   Publicações: {{ lancamento.qtdPublicacao }} </p>
+          <p> Obs: {{ lancamento.obs }} </p>
+        </button>
+  
+        <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeLancamento(lancamento)">
+            <ion-icon name="trash"></ion-icon>
+            Excluir
+          </button>
+        </ion-item-options>
+  
+      </ion-item-sliding>
+    </ion-list>
+  
+    <ion-fab right bottom>
+      <button ion-fab color="twitter" (click)="addLancamento()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  
+  </ion-content>
+  

@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="rapport">
+    <ion-title>Relatório do Mês</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label>Data</ion-label> 
+    <ion-select [(ngModel)]="mes">
+      <ion-option value="01">Janeiro</ion-option>
+      <ion-option value="02">Fevereiro</ion-option>
+      <ion-option value="03">Março</ion-option>
+      <ion-option value="04">Abril</ion-option>
+      <ion-option value="05">Maio</ion-option>
+      <ion-option value="06">Junho</ion-option>
+      <ion-option value="07">Julho</ion-option>
+      <ion-option value="08">Agosto</ion-option>
+      <ion-option value="09">Setembro</ion-option>
+      <ion-option value="10">Outubro</ion-option>
+      <ion-option value="11">Novembro</ion-option>
+      <ion-option value="12">Dezembro</ion-option>
+    </ion-select>
+
+    <ion-select [(ngModel)]="ano">
+      <ion-option value="2018">2018</ion-option>
+      <ion-option value="2019">2019</ion-option>
+      <ion-option value="2020">2020</ion-option>
+      <ion-option value="2021">2021</ion-option>
+      <ion-option value="2022">2022</ion-option>
+      <ion-option value="2023">2023</ion-option>
+      <ion-option value="2024">2024</ion-option>
+      <ion-option value="2025">2025</ion-option>
+  </ion-select>
+
+</ion-item>
+
+   <ion-list *ngFor="let relatorio of relatorioMes">
+
+      <ion-item>
+        <ion-label stacked>Publicações</ion-label>
+        <ion-input type="number" name="qtdPublicacao" [(ngModel)]="relatorio.qtdPublicacao"></ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Horas</ion-label>
+              <ion-input type="number" name="qtdHora" [(ngModel)]="relatorio.qtdHora"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Minutos</ion-label>
+              <ion-input type="number" name="qtdMinuto" [(ngModel)]="relatorio.qtdMinuto"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Vídeos</ion-label>
+              <ion-input type="number" name="qtdVideo" [(ngModel)]="relatorio.qtdVideo"></ion-input>
+                  </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Revisitas</ion-label>
+              <ion-input type="number" name="qtdRevisita" [(ngModel)]="relatorio.qtdRevisita"></ion-input>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Estudos</ion-label>
+              <ion-input type="number" name="qtdEstudo" [(ngModel)]="relatorio.qtdEstudo"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Crédito de Horas</ion-label>
+              <ion-input type="number" name="qtdCredito" [(ngModel)]="relatorio.qtdCredito"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item>
+        <ion-label stacked>Observação</ion-label>
+        <ion-input type="text" name="observacao" [(ngModel)]="relatorio.observacao"></ion-input>
+      </ion-item>
+
+  </ion-list>
+
+  <ion-fab right bottom>
+      <button ion-fab (click)="totaldoMes()"><ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-fab (click)="enviarEmail()"><ion-icon name="share"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
